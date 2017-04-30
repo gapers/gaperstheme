@@ -18,7 +18,7 @@ $wp_customize->add_section( 'relia_static_bg_section', array(
     'description'           => __( 'Customize the large banner on your homepage', 'relia' ),
     'panel'                 => 'relia_jumbotron_panel'
 ) );
-    
+
 $wp_customize->add_section( 'relia_slide_settings_section', array (
     'title'                 => __( 'Jumbotron Settings', 'relia' ),
     'description'           => __( 'Adjust the slider speed & animation', 'relia' ),
@@ -29,7 +29,7 @@ $wp_customize->add_section( 'relia_slide_settings_section', array (
 // relia_static_bg_section
 // ---------------------------------------------
 
-    // Use Image or Colour for Static Background? 
+    // Use Image or Colour for Static Background?
     $wp_customize->add_setting( 'relia_static_jumbotron_type', array (
         'default'               => 'image',
         'transport'             => 'refresh',
@@ -47,7 +47,7 @@ $wp_customize->add_section( 'relia_slide_settings_section', array (
 
     // Static Jumbotron Image
     $wp_customize->add_setting( 'relia_jumbotron_static_image', array (
-            'default'               => get_template_directory_uri() . '/inc/images/relia_hero.jpg',
+            'default'               => get_template_directory_uri() . '/inc/images/gapers_hero.jpg',
             'transport'             => 'refresh',
             'sanitize_callback'     => 'esc_url_raw',
         ) );
@@ -55,10 +55,10 @@ $wp_customize->add_section( 'relia_slide_settings_section', array (
         'mime_type'             => 'image',
         'settings'              => 'relia_jumbotron_static_image',
         'section'               => 'relia_static_bg_section',
-        'label'                 => __( 'Static Background Image', 'relia' ),   
+        'label'                 => __( 'Static Background Image', 'relia' ),
         'description'           => __( 'Select the image file that you would like to use as the homepage banner background', 'relia' ),
     ) ) );
-    
+
     // Static Jumbotron Color
     $wp_customize->add_setting( 'relia_jumbotron_static_color', array (
         'default'               => '#1c1c1c',
@@ -70,11 +70,11 @@ $wp_customize->add_section( 'relia_slide_settings_section', array (
             'section'    => 'relia_static_bg_section',
             'settings'   => 'relia_jumbotron_static_color',
     ) ) );
-    
+
 // ---------------------------------------------
 // relia_slide_settings_section
 // ---------------------------------------------
-    
+
     // Display Jumbotron?
     $wp_customize->add_setting( 'relia_slider_bool', array (
         'default'               => 'show',
@@ -90,7 +90,7 @@ $wp_customize->add_section( 'relia_slide_settings_section', array (
             'hide'              => __( 'Hide', 'relia' ),
         )
     ));
-    
+
     // Jumbotron Height
     $wp_customize->add_setting( 'relia_slider_height', array (
         'default'               => 600,
@@ -106,7 +106,7 @@ $wp_customize->add_section( 'relia_slide_settings_section', array (
             'max' => 300,
             'step' => 25,
     ) ) );
-    
+
     // Slider Darkness Tint
     $wp_customize->add_setting( 'relia_slider_dark_tint', array (
         'default'               => .5,
@@ -123,7 +123,7 @@ $wp_customize->add_section( 'relia_slide_settings_section', array (
             'max' => 1.0,
             'step' => .05,
     ) ) );
-    
+
     // Jumbotron Heading Text
     $wp_customize->add_setting( 'relia_jumbotron_heading', array (
         'default'               => __( 'Featured Product', 'relia' ),
@@ -135,7 +135,7 @@ $wp_customize->add_section( 'relia_slide_settings_section', array (
         'section'               => 'relia_slide_settings_section',
         'label'                 => __( 'Main Jumbotron Heading', 'relia' ),
     ) );
-    
+
     // Jumbotron Heading Font Size
     $wp_customize->add_setting( 'relia_jumbotron_heading_size', array (
         'default'               => 50,
@@ -152,8 +152,8 @@ $wp_customize->add_section( 'relia_slide_settings_section', array (
             'max' => 72,
             'step' => 2,
     ) ) );
-    
-    // Jumbotron Button 1 - Text 
+
+    // Jumbotron Button 1 - Text
     $wp_customize->add_setting( 'relia_jumbotron_button_1_text', array (
         'default'               => __( 'View Collection', 'relia' ),
         'transport'             => 'refresh',
@@ -177,7 +177,7 @@ $wp_customize->add_section( 'relia_slide_settings_section', array (
         'label'                 => __( 'Button 1 - Link to Post / Page', 'relia' ),
         'choices'               => relia_all_posts_array(),
     ) );
-    
+
     // Jumbotron Button 1 - External URL
     $wp_customize->add_setting( 'relia_jumbotron_button_1_url', array (
         'default'               => null,
@@ -191,7 +191,7 @@ $wp_customize->add_section( 'relia_slide_settings_section', array (
         'description'           => __( 'When not blank, forces Button 1 to link to an external URL instead of a specified post/page', 'relia' ),
     ) );
 
-    // Jumbotron Button 2 - Text 
+    // Jumbotron Button 2 - Text
     $wp_customize->add_setting( 'relia_jumbotron_button_2_text', array (
         'default'               => __( 'Back Us On Kickstarter', 'relia' ),
         'transport'             => 'refresh',
@@ -215,7 +215,7 @@ $wp_customize->add_section( 'relia_slide_settings_section', array (
         'label'                 => __( 'Button 2 - Link to Post / Page', 'relia' ),
         'choices'               => relia_all_posts_array(),
     ) );
-    
+
     // Jumbotron Button 2 - External URL
     $wp_customize->add_setting( 'relia_jumbotron_button_2_url', array (
         'default'               => null,
@@ -228,7 +228,7 @@ $wp_customize->add_section( 'relia_slide_settings_section', array (
         'label'                 => __( 'Button 2 - External URL', 'relia' ),
         'description'           => __( 'When not blank, forces Button 1 to link to an external URL instead of a specified post/page', 'relia' ),
     ) );
-    
+
     // Jumbotron Button Font Size
     $wp_customize->add_setting( 'relia_jumbotron_button_size', array (
         'default'               => 14,

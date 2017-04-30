@@ -74,7 +74,7 @@ ul {
 }
 
 ol {
-    padding-left: 0; 
+    padding-left: 0;
 }
 
 abbr, acronym {
@@ -278,7 +278,7 @@ ul#primary-menu li > ul > li > ul li {
 }
 
 .main-navigation ul ul a {
-    width: 125px; 
+    width: 125px;
 }
 
 ul#primary-menu li ul li a,
@@ -319,29 +319,29 @@ ul.slicknav_nav > li > ul > li a {
     .slicknav_menu {
         display: block;
     }
-    
+
     .slicknav_arrow {
         display: none;
     }
-    
+
     ul.slicknav_nav a {
         color: #2c2c2c;
         background: none !important;
     }
-    
+
     ul.slicknav_nav a:focus {
         outline: none;
     }
-    
+
     ul.slicknav_nav > li,
     ul.slicknav_nav > li > ul > li {
         width: 100%;
     }
-    
-    ul.slicknav_nav li ul li a:hover { 
+
+    ul.slicknav_nav li ul li a:hover {
         color: #fff;
     }
-    
+
     ul.slicknav_nav > li > a {
         text-decoration: none;
         font-weight: 100;
@@ -349,7 +349,7 @@ ul.slicknav_nav > li > ul > li a {
         font-size: 14px;
         letter-spacing: 2px;
     }
- 
+
     ul.slicknav_nav > li > ul,
     ul.slicknav_nav > li > ul > li > ul {
         position: relative;
@@ -357,18 +357,18 @@ ul.slicknav_nav > li > ul > li a {
         box-shadow: none;
         left: auto;
     }
-    
+
     ul.slicknav_nav > li > ul > li:hover > ul {
         left: auto;
     }
-    
+
     ul.slicknav_nav > li > ul > li a {
         text-transform: capitalize;
         letter-spacing: 0;
         margin-right: 0px;
         font-size: 12px;
     }
-    
+
 }
 
 /* ----- Footer ----- */
@@ -441,6 +441,8 @@ div.col-md-12.hero-banner {
     height: 800px;
     background-size: cover;
     background-position: 50% 60%;
+    background-repeat: no-repeat;
+    background-color: black;
     padding: 0px;
 }
 
@@ -494,19 +496,19 @@ div#slider-content-overlay h2 {
 }
 
 @media screen and (max-width: 768px) {
-    
+
     div.col-md-12.hero-banner {
         height: 400px;
     }
-    
+
     div.hero-overlay h2 {
         padding-top: 100px !important;
     }
-    
-    div.hero-overlay h2 {    
+
+    div.hero-overlay h2 {
         font-size: 30px !important;
     }
-    
+
     div.big-hero-buttons button {
         width: 80% !important;
         font-size: 12px;
@@ -517,19 +519,19 @@ div#slider-content-overlay h2 {
     div.main-cta-quote {
         padding: 30px 50px 10px 50px !important;
     }
-    
+
     div.main-cta-quote p {
         text-align: right;
     }
-    
+
     div.main-description {
         padding: 0 50px !important;
     }
-    
+
     div.main-description button {
         width: 100%;
     }
-    
+
 }
 
 div.big-hero-buttons {
@@ -855,7 +857,7 @@ p.form-submit input {
 
 p.form-submit input:hover {
     text-shadow: none;
-    box-shadow: none; 
+    box-shadow: none;
 }
 
 /* --------------------------------------------------
@@ -864,6 +866,15 @@ p.form-submit input:hover {
 main.site-main.relia-blog {
     background-color: #1c1c1c;
 }
+
+main.site-main {
+  background-color: #1C1C1C
+}
+
+main#main.site-main > div.container {
+  background-color: gray;
+}
+
 
 .blog-index-content h2 {
     color: #fff;
@@ -892,7 +903,7 @@ div.blog-post-image {
     background-size: cover;
     background-position: 50%;
     filter: grayscale(100%);
-    -webkit-filter: grayscale(100%); 
+    -webkit-filter: grayscale(100%);
 }
 
 .blog-roll-post article:hover div.blog-post-image {
@@ -1021,7 +1032,7 @@ h2.widget-title {
     margin: 30px 0 10px 0;
 }
 
-aside.widget {    
+aside.widget {
     margin: 35px 0;
 }
 
@@ -1081,7 +1092,7 @@ aside.widget table tfoot td {
 
 aside.widget_recent_entries > ul > li,
 aside.widget_recent_comments > ul > li,
-aside.widget_nav_menu > div > ul > li, 
+aside.widget_nav_menu > div > ul > li,
 aside.widget_pages > ul > li {
     border-bottom: thin solid #eee;
     padding: 5px 0;
@@ -1141,7 +1152,7 @@ aside.widget_tag_cloud div.tagcloud a {
     margin-bottom: 5px;
 }
 
-aside.widget_tag_cloud div.tagcloud a:hover { 
+aside.widget_tag_cloud div.tagcloud a:hover {
     opacity: 1;
     cursor: pointer;
     text-decoration: none;
@@ -1313,7 +1324,7 @@ li.product a.added_to_cart {
     text-align: right;
 }
 
-div.panel.wc-tab h2, 
+div.panel.wc-tab h2,
 div.related.products h2 {
     letter-spacing: 0;
     text-transform: none;
@@ -1369,7 +1380,7 @@ ul.wc-tabs li.active {
 }
 
 .woocommerce input[type="submit"]:hover {
-    color: #fff !important;   
+    color: #fff !important;
     text-shadow: none;
     box-shadow: none;
 }
@@ -1432,7 +1443,7 @@ div.woocommerce table.shop_table td.actions {
     padding: 15px 0;
 }
 
-div.woocommerce div.cart_totals table td, 
+div.woocommerce div.cart_totals table td,
 div.woocommerce div.cart_totals table th {
     padding: 15px !important;
 }
@@ -1485,11 +1496,11 @@ div.coupon input#coupon_code {
     overflow: hidden;
 }
 
-@media (max-width: 599px) { 
-    .woocommerce-page ul.products li.product { 
-        width: 100%; 
+@media (max-width: 599px) {
+    .woocommerce-page ul.products li.product {
+        width: 100%;
         margin-bottom: 15px;
-    } 
+    }
 }
 
 
@@ -1625,7 +1636,7 @@ h3.faq-title {
 -------------------------------------------------- */
 div#news-posts {
     padding-top: 50px;
-    padding-bottom: 0; 
+    padding-bottom: 0;
 }
 
 #news-posts .news-item {
@@ -1697,7 +1708,7 @@ div#news-posts {
     font-size: 24px;
 }
 
-.event-details h2 div.location, 
+.event-details h2 div.location,
 .event-details h2 div.date {
     font-size: 16px;
     background-color: #E6E6E6;
@@ -1707,9 +1718,9 @@ div#news-posts {
     font-weight: 500;
 }
 
-.area-b .event-details h2 div.location, 
+.area-b .event-details h2 div.location,
 .area-b .event-details h2 div.date,
-.area-d .event-details h2 div.location, 
+.area-d .event-details h2 div.location,
 .area-d .event-details h2 div.date {
     background-color: #fff;
 }
@@ -1906,7 +1917,7 @@ form#relia-contact-form textarea {
 
 .area-b .relia-callout .textwidget,
 .area-d .relia-callout .textwidget,
-.area-b .relia-callout a.relia-button, 
+.area-b .relia-callout a.relia-button,
 .area-d .relia-callout a.relia-button {
     background-color: #fff;
 }
@@ -2053,7 +2064,7 @@ ul#relia-testimonials .testimonial-content {
     border-bottom-right-radius: 10px;
 }
 
-.area-b ul#relia-testimonials .testimonial-content, 
+.area-b ul#relia-testimonials .testimonial-content,
 .area-d ul#relia-testimonials .testimonial-content {
     background-color: #fff;
 }

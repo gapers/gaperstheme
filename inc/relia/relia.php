@@ -4,39 +4,39 @@
  * Enqueue scripts and styles.
  */
 function relia_scripts() {
-   
+
     wp_enqueue_style( 'relia-style', get_stylesheet_uri() );
-    
+
     // Load Fonts from array
     $fonts = relia_fonts();
-    
+
     // Primary Font Enqueue
     if( array_key_exists ( get_theme_mod('relia_font_primary', 'Dosis, sans-serif'), $fonts ) ) :
         wp_enqueue_style('relia-font-primary', '//fonts.googleapis.com/css?family=' . $fonts[ get_theme_mod('relia_font_primary', 'Dosis, sans-serif') ], array(), RELIA_VERSION );
     endif;
-    
+
     // Secondary Font Enqueue
     if( array_key_exists ( get_theme_mod('relia_font_secondary', 'Abel, sans-serif'), $fonts ) ) :
         wp_enqueue_style('relia-font-secondary', '//fonts.googleapis.com/css?family=' . $fonts[ get_theme_mod('relia_font_secondary', 'Abel, sans-serif') ], array(), RELIA_VERSION );
     endif;
-    
+
     // Body Font Enqueue
     if( array_key_exists ( get_theme_mod('relia_font_body', 'Open Sans, sans-serif'), $fonts ) ) :
         wp_enqueue_style('relia-font-body', '//fonts.googleapis.com/css?family=' . $fonts[ get_theme_mod('relia_font_body', 'Open Sans, sans-serif') ], array(), RELIA_VERSION );
     endif;
-    
+
     // Enqueue stylesheets
     wp_enqueue_style('bootstrap', get_template_directory_uri() . '/inc/css/bootstrap.min.css', array(), RELIA_VERSION);
     wp_enqueue_style('fontawesome', get_template_directory_uri() . '/inc/css/font-awesome.css', array(), RELIA_VERSION);
     wp_enqueue_style('slicknav', get_template_directory_uri() . '/inc/css/slicknav.min.css', array(), RELIA_VERSION);
     wp_enqueue_style('animatecss', get_template_directory_uri() . '/inc/css/animate.css', array(), RELIA_VERSION);
     wp_enqueue_style('relia-main-style', get_template_directory_uri() . '/inc/css/style.css', array(), RELIA_VERSION);
-    
+
     // Skin Color Preset Enqueue
     if ( get_theme_mod( 'relia_color_skin_toggle', 'preset' ) == 'preset' ) :
-        wp_enqueue_style('relia-template', get_template_directory_uri() . '/inc/css/temps/' . esc_attr( get_theme_mod( 'relia_preset_theme_color', 'gold' ) ) . '.css', array(), RELIA_VERSION);
+        wp_enqueue_style('relia-template', get_template_directory_uri() . '/inc/css/temps/' . esc_attr( get_theme_mod( 'relia_preset_theme_color', 'gapers' ) ) . '.css', array(), RELIA_VERSION);
     endif;
-    
+
     // Enqueue scripts
     wp_enqueue_script('slicknav', get_template_directory_uri() . '/inc/js/jquery.slicknav.min.js', array('jquery'), RELIA_VERSION, true);
     wp_enqueue_script('wow', get_template_directory_uri() . '/inc/js/wow.min.js', array('jquery'), RELIA_VERSION, true);
@@ -44,11 +44,11 @@ function relia_scripts() {
     wp_enqueue_script('stellar', get_template_directory_uri() . '/inc/js/stellar.min.js', array('jquery'), RELIA_VERSION, true);
 
     wp_enqueue_script('relia-custom', get_template_directory_uri() . '/inc/js/custom.js', array('jquery'), RELIA_VERSION, true);
-    
+
     if (is_singular() && comments_open() && get_option('thread_comments')) :
         wp_enqueue_script('comment-reply');
     endif;
-    
+
 }
 add_action('wp_enqueue_scripts', 'relia_scripts');
 
@@ -57,24 +57,24 @@ function relia_render_homepage() { ?>
     <?php relia_homepage_widgets(); ?>
 
     <?php if ( get_theme_mod( 'relia_features_list_bool', 'show' ) == 'show' ) : ?>
-    
+
         <section class="features-section">
-        
+
             <div class="container-fluid">
                 <div class="row">
-                    
+
                     <div class="col-sm-12">
                         <h2><?php echo esc_attr( get_theme_mod( 'relia_features_heading', __( 'Features', 'relia' )  ) ); ?></h2>
                     </div>
-                    
+
                 </div>
             </div>
-            
+
             <div class="container">
                 <div class="row">
-                    
+
                     <?php for ( $index = 1; $index < 4; $index++) : ?>
-                        
+
                         <div class="col-sm-4">
                             <div class="feature-cta cta-<?php echo $index; ?> wow fadeInUp">
                                 <i class="fa <?php echo esc_attr( get_theme_mod( 'relia_features_cta_' . $index . '_icon', 'fa-star'  ) ); ?>"></i>
@@ -86,37 +86,37 @@ function relia_render_homepage() { ?>
                                 </p>
                             </div>
                         </div>
-                    
+
                     <?php endfor; ?>
-                    
+
                 </div>
             </div>
-            
+
         </section>
 
     <?php endif; ?>
 
     <?php if ( get_theme_mod( 'relia_recent_articles_bool', 'show' ) == 'show' ) : ?>
-    
+
         <section class="recent-articles-section">
             <div class="container">
                 <div class="row">
-                    
+
                     <div class="col-sm-12 recent-article wow fadeInDown">
                         <h2 class="page-content-title">
                             <?php echo esc_attr( get_theme_mod( 'relia_articles_heading', __( 'Homepage Articles', 'relia' )  ) ); ?>
                         </h2>
                         <hr>
                     </div>
-                    
-                    <?php 
+
+                    <?php
                         $recents = wp_get_recent_posts( array(
                             'numberposts'   => 3,
                             'post_type'     => 'post',
                             'post_status'   => 'publish',
                         ) );
                     ?>
-                    
+
                     <?php $article_1_ID = get_theme_mod( 'relia_articles_content', 'featured' ) == 'recent' ? $recents[0]["ID"] : get_theme_mod( 'relia_featured_article_1', null ); ?>
                     <div class="col-sm-4 recent-article wow fadeInUp">
                         <h4>
@@ -131,7 +131,7 @@ function relia_render_homepage() { ?>
                             </a>
                         </h5>
                     </div>
-                    
+
                     <?php $article_2_ID = get_theme_mod( 'relia_articles_content', 'featured' ) == 'recent' ? $recents[1]["ID"] : get_theme_mod( 'relia_featured_article_2', null ); ?>
                     <div class="col-sm-4 recent-article wow fadeInUp">
                         <h4>
@@ -146,7 +146,7 @@ function relia_render_homepage() { ?>
                             </a>
                         </h5>
                     </div>
-                    
+
                    <?php $article_3_ID = get_theme_mod( 'relia_articles_content', 'featured' ) == 'recent' ? $recents[2]["ID"] : get_theme_mod( 'relia_featured_article_3', null ); ?>
                     <div class="col-sm-4 recent-article wow fadeInUp">
                         <h4>
@@ -161,20 +161,20 @@ function relia_render_homepage() { ?>
                             </a>
                         </h5>
                     </div>
-                    
+
                     <?php wp_reset_postdata(); ?>
-                    
+
                 </div>
             </div>
         </section>
 
-    <?php endif; 
-    
+    <?php endif;
+
 }
 add_action( 'relia_homepage', 'relia_render_homepage' );
 
 function relia_render_jumbotron(){
-    
+
     if ( get_theme_mod( 'relia_slider_bool', 'show' ) == 'show' ) : ?>
 
         <section class="main-page-content">
@@ -184,23 +184,23 @@ function relia_render_jumbotron(){
                 <div class="row">
 
                     <?php if( get_theme_mod( 'relia_jumbotron_type', 'static') == 'slider' ) : ?>
-                    
+
                     <?php else : ?>
-                    
+
                         <?php if ( get_theme_mod( 'relia_static_jumbotron_type', 'image' ) == 'image' ) : ?>
-                            <div data-stellar-background-ratio="0.7" class="col-md-12 hero-banner parallax-window" style="background-image: url(<?php echo esc_url( get_theme_mod( 'relia_jumbotron_static_image', get_template_directory_uri() . '/inc/images/relia_hero.jpg' ) ); ?>)">
+                            <div data-stellar-background-ratio="0.7" class="col-md-12 hero-banner parallax-window" style="background-image: url(<?php echo esc_url( get_theme_mod( 'relia_jumbotron_static_image', get_template_directory_uri() . '/inc/images/gapers_hero.jpg' ) ); ?>)">
                         <?php else : ?>
                             <div class="col-md-12 hero-banner" style="background-color: <?php echo esc_attr( get_theme_mod( 'relia_jumbotron_static_color', '#1c1c1c') ); ?>;">
-                        <?php endif; ?>        
+                        <?php endif; ?>
 
                                 <div class="hero-overlay">
-                                    
+
                                     <div class="content-wrapper">
-                                    
+
                                         <h2 class="wow fadeInDown"><?php echo esc_attr( get_theme_mod( 'relia_jumbotron_heading', __( 'Featured Product', 'relia' ) ) ); ?></h2>
                                         <div class="big-hero-buttons wow fadeInUp">
-                                            
-                                            
+
+
                                             <?php if( get_theme_mod( 'relia_jumbotron_button_1_text', __( 'View Collection', 'relia' ) ) ) : ?>
                                             <a href="
                                                 <?php if ( get_theme_mod( 'relia_jumbotron_button_1_url', null ) == false ) : ?>
@@ -214,7 +214,7 @@ function relia_render_jumbotron(){
                                                 </button>
                                             </a>
                                             <?php endif; ?>
-                                            
+
                                             <?php if( get_theme_mod( 'relia_jumbotron_button_2_text', __( 'View Collection', 'relia' ) ) ) : ?>
                                             <a href="
                                                 <?php if ( get_theme_mod( 'relia_jumbotron_button_2_url', null ) == false ) : ?>
@@ -232,13 +232,13 @@ function relia_render_jumbotron(){
                                         </div>
 
                                     </div>
-                                    
+
                                 </div>
 
                             </div>
 
                     <?php endif; ?>
-                            
+
                 </div>
 
             </div>
@@ -246,16 +246,16 @@ function relia_render_jumbotron(){
         </section>
 
     <?php endif;
-    
+
 }
 add_action( 'relia_jumbotron', 'relia_render_jumbotron' );
 
 function relia_render_footer() { ?>
-    
+
     <div class="wow fadeIn">
 
         <div class="social-icons">
-            
+
             <?php if( get_theme_mod( 'relia_include_icon_facebook', 'http://facebook.com' ) ) : ?>
                 <a class="link-facebook" href="<?php echo esc_url( get_theme_mod( 'relia_include_icon_facebook', "http://facebook.com" ) ); ?>" target="_BLANK">
                     <i class="fa fa-facebook"></i>
@@ -285,7 +285,7 @@ function relia_render_footer() { ?>
                     <i class="fa fa-youtube"></i>
                 </a>
             <?php endif; ?>
-            
+
             <?php if( get_theme_mod( 'relia_include_icon_vimeo', 'http://vimeo.com' ) ) : ?>
                 <a class="link-vimeo" href="<?php echo esc_url( get_theme_mod( 'relia_include_icon_vimeo', "http://vimeo.com" ) ); ?>" target="_BLANK">
                     <i class="fa fa-vimeo-square"></i>
@@ -297,13 +297,13 @@ function relia_render_footer() { ?>
                     <i class="fa fa-music"></i>
                 </a>
             <?php endif; ?>
-            
+
             <?php if( get_theme_mod( 'relia_include_icon_instagram', 'http://instagram.com' ) ) : ?>
                 <a class="link-instagram" href="<?php echo esc_url( get_theme_mod( 'relia_include_icon_instagram', "http://instagram.com" ) ); ?>" target="_BLANK">
                     <i class="fa fa-instagram"></i>
                 </a>
             <?php endif; ?>
-            
+
             <?php if( get_theme_mod( 'relia_include_icon_pinterest', 'http://pinterest.com' ) ) : ?>
                 <a class="link-pinterest" href="<?php echo esc_url( get_theme_mod( 'relia_include_icon_pinterest', "http://pinterest.com" ) ); ?>" target="_BLANK">
                     <i class="fa fa-pinterest"></i>
@@ -312,32 +312,28 @@ function relia_render_footer() { ?>
 
         </div>
 
-        <p class="footer">
-            Designed by Smartcat <img src="<?php echo get_template_directory_uri() . "/inc/images/smartcat-30x33.png"; ?>" alt="Smartcat">
-        </p>
-        
         <div class="payment-icons">
 
-            <?php if ( get_theme_mod( 'relia_include_cc_visa', true ) ) : ?>
+            <?php if ( get_theme_mod( 'relia_include_cc_visa', false ) ) : ?>
                 <i class="fa fa-cc-visa"></i>
             <?php endif; ?>
 
-            <?php if ( get_theme_mod( 'relia_include_cc_mastercard', true ) ) : ?>
+            <?php if ( get_theme_mod( 'relia_include_cc_mastercard', false ) ) : ?>
                 <i class="fa fa-cc-mastercard"></i>
             <?php endif; ?>
 
-            <?php if ( get_theme_mod( 'relia_include_cc_amex', true ) ) : ?>
+            <?php if ( get_theme_mod( 'relia_include_cc_amex', false ) ) : ?>
                 <i class="fa fa-cc-amex"></i>
             <?php endif; ?>
 
-            <?php if ( get_theme_mod( 'relia_include_cc_paypal', true ) ) : ?>
+            <?php if ( get_theme_mod( 'relia_include_cc_paypal', false ) ) : ?>
                 <i class="fa fa-cc-paypal"></i>
             <?php endif; ?>
 
         </div>
 
         <div class="site-info">
-            <?php echo get_theme_mod( 'relia_footer_copyright', __( '© Company Name', 'relia' ) ); ?>
+            <?php echo get_theme_mod( 'relia_footer_copyright', '© 2017, Associazione Gruppo Astrofili Persicetani - Vicolo Baciadonne, 1 - 40017 San Giovanni in Persiceto(BO) - P.Iva 02089481200' ); ?>
         </div>
 
     </div>
@@ -392,12 +388,12 @@ function relia_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
-        
+
 }
 add_action( 'widgets_init', 'relia_widgets_init' );
 
 function relia_main_width() {
-    
+
     if( is_active_sidebar('sidebar-left') && is_active_sidebar('sidebar-right') ) :
         $width = 6;
     elseif( is_active_sidebar('sidebar-left') || is_active_sidebar('sidebar-right') ) :
@@ -405,56 +401,56 @@ function relia_main_width() {
     else:
         $width = 12;
     endif;
-    
+
     return $width;
-    
+
 }
 
 function relia_shop_width() {
-    
+
     if( is_active_sidebar('sidebar-shop') ) :
         $width = 9;
     else:
         $width = 12;
     endif;
-    
+
     return $width;
-    
+
 }
 
 function relia_custom_css() { ?>
     <style type="text/css">
-        
+
         body {
             font-size: <?php echo esc_attr( get_theme_mod( 'relia_body_font_size', '16') ); ?>px;
             font-family: <?php echo esc_attr( get_theme_mod( 'relia_font_body', 'Open Sans, sans-serif' ) ); ?>;
         }
-        
+
         /* Header Bar Title */
         h1.header-title {
             font-size: <?php echo esc_attr( get_theme_mod( 'relia_title_font_size', '36') ); ?>px;
         }
-    
+
         ul#primary-menu > li > a,
         ul.slicknav_nav > li > a {
-            font-size: <?php echo esc_attr( get_theme_mod( 'relia_menu_bar_item_size', '14' ) ); ?>px;
+            font-size: <?php echo esc_attr( get_theme_mod( 'relia_menu_bar_item_size', '16' ) ); ?>px;
         }
-        
+
         /* Light Coloured Nav Items Toggle*/
         <?php if ( get_theme_mod( 'relia_light_menu_item_toggle', 'dark' ) == 'bright' ) : ?>
-            
+
             ul#primary-menu li a,
             ul.slicknav_nav a {
                 color: #efefef;
             }
-            
+
             ul.slicknav_nav a:hover {
                 color: #fff;
             }
-            
+
         <?php endif; ?>
-        
-        
+
+
         /* Primary Font Rules */
         h1, h2, h3, h4, h5, h6,
         h1.header-title,
@@ -500,14 +496,14 @@ function relia_custom_css() { ?>
         }
         aside.widget.woocommerce a.button,
         .woocommerce input[type="submit"] { font-family: <?php echo esc_attr( get_theme_mod( 'relia_font_primary', 'Dosis, sans-serif' ) ); ?> !important; }
-        
-        
+
+
         /* Secondary Font Rules */
         p.header-description,
         .woocommerce div#reviews h3,
         .woocommerce-tabs ul.wc-tabs li,
         div.panel.wc-tab p,
-        div.panel.wc-tab h2, 
+        div.panel.wc-tab h2,
         div.related.products h2,
         .woocommerce .product_meta,
         .woocommerce .quantity .qty,
@@ -530,7 +526,7 @@ function relia_custom_css() { ?>
         div.homepage-page-content div.pagination-links,
         .woocommerce-cart .wc-proceed-to-checkout a.checkout-button,
         a.blog-post-read-more,
-        div#comments div#respond form p 
+        div#comments div#respond form p
         div.comment-metadata a,
         li.comment div.comment-author span.says,
         li.comment div.comment-author b,
@@ -546,7 +542,7 @@ function relia_custom_css() { ?>
         a.relia-cart,
         dl dd,
         dl dt,
-        td, 
+        td,
         th,
         form#relia-contact-form input[type="text"],
         form#relia-contact-form textarea,
@@ -561,22 +557,22 @@ function relia_custom_css() { ?>
         {
             font-family: <?php echo esc_attr( get_theme_mod( 'relia_font_secondary', 'Abel, sans-serif' ) ); ?>;
         }
-        
+
         .recent-article h5 a {
             font-family: <?php echo esc_attr( get_theme_mod( 'relia_font_secondary', 'Abel, sans-serif' ) ); ?> !important;
         }
-        
+
         <?php if ( get_theme_mod( 'relia_single_show_cat_tags', 'show' ) == 'hide' ) : ?>
             .single-post .cat-links,
             .single-post .tags-links {
                 display: none !important;
             }
         <?php endif; ?>
-            
+
         header#masthead section.page-header-block {
             background-color: <?php echo esc_attr( get_theme_mod( 'relia_header_background_color', '#1c1c1c' ) ); ?>;
         }
-        
+
         footer.site-footer {
             background-color: <?php echo esc_attr( get_theme_mod( 'relia_footer_background_color', '#1c1c1c' ) ); ?>;
         }
@@ -594,23 +590,23 @@ function relia_custom_css() { ?>
         div#slider-content-overlay h2 { font-size: <?php echo esc_attr( get_theme_mod( 'relia_jumbotron_heading_size', 50 ) ) . 'px'; ?>; }
 
         div.big-hero-buttons button { font-size: <?php echo esc_attr( get_theme_mod( 'relia_jumbotron_button_size', 14 ) ) . 'px'; ?>; }
-        
+
         <?php $front = get_option('show_on_front'); ?>
-        
+
         <?php if ( $front == 'posts' ) : ?>
         .front-page-content{ border-top: none !important }
         <?php endif; ?>
-            
+
     </style>
-    <?php 
+    <?php
 }
 add_action('wp_head', 'relia_custom_css');
 
 function relia_homepage_widgets() { ?>
-    
+
     <!-- Homepage Area A -->
     <?php if ( get_theme_mod( 'relia_toggle_widget_area_a', 'on' ) == 'on' ) : ?>
-    
+
         <?php if ( ! is_active_sidebar( 'sidebar-front' ) ) : ?>
 
             <section class="main-page-content front-page-widget area-a">
@@ -641,8 +637,8 @@ function relia_homepage_widgets() { ?>
             <?php get_sidebar( 'front' ); ?>
 
         <?php endif; ?>
-    
+
     <?php endif; ?>
 
-    
+
 <?php }

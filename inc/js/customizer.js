@@ -1,11 +1,14 @@
 jQuery( document ).ready( function( $ ){
- 
-    $('#customize-info .preview-notice').html('<a href="http://relia.smartcatdev.wpengine.com/" target="_BLANK" class="button button-primary">Upgrade to Relia Pro</a>');
-    $('#customize-info .preview-notice').append('<p style="color: #cc0000">The pro version includes unlimited skin colors, a 5-slide Jumbotron Slider, more font options, Ajax contact form, Testimonials carousel, FAQs, News section, Events, Photo Gallery and more!</p>');
- 
+
     $( '#customize-control-relia_preset_theme_color input[type=radio]' ).each( function() {
 
         var selector = $(this);
+
+        if( selector.val()  === 'gapers' ) {
+
+            selector.parent('label').append('<span class="theme-color" style="background: #0080e0;"></span>')
+
+        }
 
         if( selector.val()  === 'gold' ) {
 
@@ -36,7 +39,7 @@ jQuery( document ).ready( function( $ ){
             selector.parent('label').append('<span class="theme-color" style="background: #9f6eea;"></span>')
 
         }
-        
+
         if( selector.val()  === 'red' ) {
 
             selector.parent('label').append('<span class="theme-color" style="background: #c93838;"></span>')
@@ -45,5 +48,5 @@ jQuery( document ).ready( function( $ ){
 
 
     });
-    
+
 });

@@ -22,7 +22,7 @@ $wp_customize->add_section( 'relia_header_section', array(
 // Header Section - Settings & Controls
 // ---------------------------------------------
 
-    // Use Image or Colour for Header Background? 
+    // Use Image or Colour for Header Background?
     $wp_customize->add_setting( 'relia_header_background_type', array (
         'default'               => 'image',
         'transport'             => 'refresh',
@@ -37,7 +37,7 @@ $wp_customize->add_section( 'relia_header_section', array(
             'image'             => __( 'Use a background image', 'relia' ),
             'color'             => __( 'Use a solid color background', 'relia' ),
     ) ) );
-    
+
     // Header Background Image
     $wp_customize->add_setting( 'relia_header_image', array (
         'default'               => get_template_directory_uri() . '/inc/images/page-header-bg.jpg',
@@ -49,9 +49,9 @@ $wp_customize->add_section( 'relia_header_section', array(
         'settings'              => 'relia_header_image',
         'section'               => 'relia_header_section',
         'label'                 => __( 'Header Background Image', 'relia' ),
-        'description'           => __( 'Select the image file that you would like to use as the header background', 'relia' ),        
+        'description'           => __( 'Select the image file that you would like to use as the header background', 'relia' ),
     ) ) );
-    
+
     // Header Background Color
     $wp_customize->add_setting( 'relia_header_background_color', array (
         'default'               => '#1c1c1c',
@@ -63,10 +63,10 @@ $wp_customize->add_section( 'relia_header_section', array(
         'section'               => 'relia_header_section',
         'settings'              => 'relia_header_background_color',
     ) ) );
-    
+
     // Use Logo or Title
     $wp_customize->add_setting( 'relia_logo_or_title', array (
-        'default'               => 'title',
+        'default'               => 'logo',
         'transport'             => 'refresh',
         'sanitize_callback'     => 'relia_sanitize_logo_or_title_switch',
     ) );
@@ -82,7 +82,7 @@ $wp_customize->add_section( 'relia_header_section', array(
 
     // Header Logo Image
     $wp_customize->add_setting( 'relia_header_logo', array (
-        'default'               => get_template_directory_uri() . '/inc/images/relia-logo.png',
+        'default'               => get_template_directory_uri() . '/inc/images/gapers-logo.png',
         'transport'             => 'refresh',
         'sanitize_callback'     => 'esc_url_raw',
     ) );
@@ -91,9 +91,9 @@ $wp_customize->add_section( 'relia_header_section', array(
         'settings'              => 'relia_header_logo',
         'section'               => 'relia_header_section',
         'label'                 => __( 'Logo', 'relia' ),
-        'description'           => __( 'If you would like to use a logo instead of the site title, you may upload it here', 'relia' ),        
+        'description'           => __( 'If you would like to use a logo instead of the site title, you may upload it here', 'relia' ),
     ) ) );
-    
+
     // Header Logo Size (Height)
     $wp_customize->add_setting( 'relia_logo_size', array (
         'default'               => 50,
@@ -110,7 +110,7 @@ $wp_customize->add_section( 'relia_header_section', array(
             'max' => 200,
             'step' => 10,
     ) ) );
-    
+
     // Show or Hide Tagline
     $wp_customize->add_setting( 'relia_tagline_toggle', array (
         'default'               => 'show',
@@ -126,7 +126,7 @@ $wp_customize->add_section( 'relia_header_section', array(
             'show'              => __( 'Show', 'relia' ),
             'hide'              => __( 'Hide', 'relia' ),
     ) ) );
-    
+
     // Show or Hide Search Icon
     $wp_customize->add_setting( 'relia_search_toggle', array (
         'default'               => 'show',
@@ -145,7 +145,7 @@ $wp_customize->add_section( 'relia_header_section', array(
 
     // Show or Hide Shopping Cart
     if( class_exists( 'WooCommerce' ) ) :
-    
+
         $wp_customize->add_setting( 'relia_shopping_cart_toggle', array (
             'default'               => 'show',
             'transport'             => 'refresh',
@@ -160,9 +160,9 @@ $wp_customize->add_section( 'relia_header_section', array(
                 'show'              => __( 'Show', 'relia' ),
                 'hide'              => __( 'Hide', 'relia' ),
         ) ) );
-    
+
     endif;
-    
+
 // ---------------------------------------------
 // Footer Section
 // ---------------------------------------------
@@ -176,7 +176,7 @@ $wp_customize->add_section( 'relia_footer_section', array(
 // Footer Section - Settings & Controls
 // ---------------------------------------------
 
-    // Use Image or Colour for Footer Background? 
+    // Use Image or Colour for Footer Background?
     $wp_customize->add_setting( 'relia_footer_background_type', array (
         'default'               => 'image',
         'transport'             => 'refresh',
@@ -191,7 +191,7 @@ $wp_customize->add_section( 'relia_footer_section', array(
             'image'             => __( 'Use a background image', 'relia' ),
             'color'             => __( 'Use a solid color background', 'relia' ),
     ) ) );
-    
+
     // Footer Background Image
     $wp_customize->add_setting( 'relia_footer_image', array (
         'default'               => get_template_directory_uri() . '/inc/images/page-header-bg.jpg',
@@ -203,9 +203,9 @@ $wp_customize->add_section( 'relia_footer_section', array(
         'settings'              => 'relia_footer_image',
         'section'               => 'relia_footer_section',
         'label'                 => __( 'Footer Background Image', 'relia' ),
-        'description'           => __( 'Select the image file that you would like to use as the footer background', 'relia' ),        
+        'description'           => __( 'Select the image file that you would like to use as the footer background', 'relia' ),
     ) ) );
-    
+
     // Footer Background Color
     $wp_customize->add_setting( 'relia_footer_background_color', array (
         'default'               => '#1c1c1c',
@@ -217,10 +217,10 @@ $wp_customize->add_section( 'relia_footer_section', array(
         'section'               => 'relia_footer_section',
         'settings'              => 'relia_footer_background_color',
     ) ) );
-    
+
     // Footer Copyright Text
     $wp_customize->add_setting( 'relia_footer_copyright', array (
-        'default'               => __( '© Company Name', 'relia' ),
+        'default'               => '© 2017, Associazione Gruppo Astrofili Persicetani - Vicolo Baciadonne, 1 - 40017 San Giovanni in Persiceto(BO) - P.Iva 02089481200',
         'transport'             => 'postMessage',
         'sanitize_callback'     => 'relia_sanitize_text',
     ) );
@@ -229,7 +229,7 @@ $wp_customize->add_section( 'relia_footer_section', array(
         'section'               => 'relia_footer_section',
         'label'                 => __( 'Footer Copyright or Tagline', 'relia' ),
     ) );
-    
+
     // Social Icons - Include Facebook
     $wp_customize->add_setting( 'relia_include_icon_facebook', array (
         'default'               => 'http://facebook.com',
@@ -242,7 +242,7 @@ $wp_customize->add_section( 'relia_footer_section', array(
         'label'                 => __( 'Facebook URL', 'relia' ),
         'description'           => __( 'When left blank, this icon will not be shown', 'relia' ),
     ) );
-    
+
     // Social Icons - Include Twitter
     $wp_customize->add_setting( 'relia_include_icon_twitter', array (
         'default'               => 'http://twitter.com',
@@ -255,7 +255,7 @@ $wp_customize->add_section( 'relia_footer_section', array(
         'label'                 => __( 'Twitter URL', 'relia' ),
         'description'           => __( 'When left blank, this icon will not be shown', 'relia' ),
     ) );
-    
+
     // Social Icons - Include Google+
     $wp_customize->add_setting( 'relia_include_icon_google', array (
         'default'               => 'http://plus.google.com',
@@ -294,7 +294,7 @@ $wp_customize->add_section( 'relia_footer_section', array(
         'label'                 => __( 'YouTube URL', 'relia' ),
         'description'           => __( 'When left blank, this icon will not be shown', 'relia' ),
     ) );
-    
+
     // Social Icons - Include Vimeo
     $wp_customize->add_setting( 'relia_include_icon_vimeo', array (
         'default'               => 'http://vimeo.com',
@@ -307,7 +307,7 @@ $wp_customize->add_section( 'relia_footer_section', array(
         'label'                 => __( 'Vimeo URL', 'relia' ),
         'description'           => __( 'When left blank, this icon will not be shown', 'relia' ),
     ) );
-    
+
     // Social Icons - Include Music
     $wp_customize->add_setting( 'relia_include_icon_music', array (
         'default'               => 'http://itunes.com',
@@ -320,7 +320,7 @@ $wp_customize->add_section( 'relia_footer_section', array(
         'label'                 => __( 'Music URL', 'relia' ),
         'description'           => __( 'When left blank, this icon will not be shown', 'relia' ),
     ) );
-    
+
     // Social Icons - Include Instagram
     $wp_customize->add_setting( 'relia_include_icon_instagram', array (
         'default'               => 'http://instagram.com',
@@ -333,7 +333,7 @@ $wp_customize->add_section( 'relia_footer_section', array(
         'label'                 => __( 'Instagram URL', 'relia' ),
         'description'           => __( 'When left blank, this icon will not be shown', 'relia' ),
     ) );
-    
+
     // Social Icons - Include Pinterest
     $wp_customize->add_setting( 'relia_include_icon_pinterest', array (
         'default'               => 'http://pinterest.com',
@@ -346,10 +346,10 @@ $wp_customize->add_section( 'relia_footer_section', array(
         'label'                 => __( 'Pinterest URL', 'relia' ),
         'description'           => __( 'When left blank, this icon will not be shown', 'relia' ),
     ) );
-    
+
     // Payment Icons - Visa
     $wp_customize->add_setting( 'relia_include_cc_visa', array (
-        'default'               => true,
+        'default'               => false,
         'transport'             => 'postMessage',
         'sanitize_callback'     => 'relia_sanitize_checkbox',
     ) );
@@ -358,10 +358,10 @@ $wp_customize->add_section( 'relia_footer_section', array(
         'section'               => 'relia_footer_section',
         'label'                 => __( 'Display Visa Icon?', 'relia' ),
     ) );
-    
+
     // Payment Icons - MasterCard
     $wp_customize->add_setting( 'relia_include_cc_mastercard', array (
-        'default'               => true,
+        'default'               => false,
         'transport'             => 'postMessage',
         'sanitize_callback'     => 'relia_sanitize_checkbox',
     ) );
@@ -370,10 +370,10 @@ $wp_customize->add_section( 'relia_footer_section', array(
         'section'               => 'relia_footer_section',
         'label'                 => __( 'Display MasterCard Icon?', 'relia' ),
     ) );
-    
+
     // Payment Icons - American Express
     $wp_customize->add_setting( 'relia_include_cc_amex', array (
-        'default'               => true,
+        'default'               => false,
         'transport'             => 'postMessage',
         'sanitize_callback'     => 'relia_sanitize_checkbox',
     ) );
@@ -382,10 +382,10 @@ $wp_customize->add_section( 'relia_footer_section', array(
         'section'               => 'relia_footer_section',
         'label'                 => __( 'Display American Express Icon?', 'relia' ),
     ) );
-    
+
     // Payment Icons - PayPal
     $wp_customize->add_setting( 'relia_include_cc_paypal', array (
-        'default'               => true,
+        'default'               => false,
         'transport'             => 'postMessage',
         'sanitize_callback'     => 'relia_sanitize_checkbox',
     ) );
@@ -394,4 +394,3 @@ $wp_customize->add_section( 'relia_footer_section', array(
         'section'               => 'relia_footer_section',
         'label'                 => __( 'Display PayPal Icon?', 'relia' ),
     ) );
-    

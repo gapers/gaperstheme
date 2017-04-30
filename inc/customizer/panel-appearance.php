@@ -20,10 +20,10 @@ $wp_customize->add_section( 'relia_color_section', array (
 // ---------------------------------------------
 // Color Section - Settings & Controls
 // ---------------------------------------------
-    
+
     // Preset Color
     $wp_customize->add_setting('relia_preset_theme_color', array(
-        'default'               => 'gold',
+        'default'               => 'gapers',
         'transport'             => 'refresh',
         'sanitize_callback'     => 'relia_sanitize_text'
     ));
@@ -39,9 +39,10 @@ $wp_customize->add_section( 'relia_color_section', array (
             'blue'      => __('Blue', 'relia'),
             'purple'    => __('Purple', 'relia'),
             'red'       => __('Red', 'relia'),
+            'gapers'    => __('Gapers blue', 'relia'),
         )
     ));
-    
+
     // Menu Bar Link Item Brightness
     $wp_customize->add_setting('relia_light_menu_item_toggle', array(
         'default'               => 'dark',
@@ -58,7 +59,7 @@ $wp_customize->add_section( 'relia_color_section', array (
             'bright'        => __('Bright Links', 'relia'),
         )
     ));
-    
+
 // ---------------------------------------------
 // Fonts Section
 // ---------------------------------------------
@@ -66,7 +67,7 @@ $wp_customize->add_section('relia_fonts_section', array(
     'title'     => __('Fonts', 'relia'),
     'panel'     => 'relia_appearance_panel',
 ));
-    
+
 // ---------------------------------------------
 // Fonts Section - Settings & Controls
 // ---------------------------------------------
@@ -98,7 +99,7 @@ $wp_customize->add_section('relia_fonts_section', array(
         'description'           => __('Select the secondary font of the theme', 'relia'),
         'choices'               => relia_fonts()
     ));
-    
+
     // Body Font
     $wp_customize->add_setting('relia_font_body', array(
         'default' => 'Open Sans, sans-serif',
@@ -112,7 +113,7 @@ $wp_customize->add_section('relia_fonts_section', array(
         'description'           => __('Select the secondary font of the theme', 'relia'),
         'choices'               => relia_fonts()
     ));
-    
+
     // Theme Title Font Size
     $wp_customize->add_setting( 'relia_title_font_size', array (
         'default'               => 36,
@@ -129,7 +130,7 @@ $wp_customize->add_section('relia_fonts_section', array(
             'max' => 60,
             'step' => 2,
     ) ) );
-    
+
     // Body Font Size
     $wp_customize->add_setting( 'relia_body_font_size', array (
         'default'               => 16,
@@ -146,10 +147,10 @@ $wp_customize->add_section('relia_fonts_section', array(
             'max' => 22,
             'step' => 2,
     ) ) );
-    
+
     // Menu Bar Item Font Size
     $wp_customize->add_setting( 'relia_menu_bar_item_size', array (
-        'default'               => 14,
+        'default'               => 16,
         'transport'             => 'postMessage',
         'sanitize_callback'     => 'relia_sanitize_integer',
     ) );
@@ -163,7 +164,7 @@ $wp_customize->add_section('relia_fonts_section', array(
             'max' => 24,
             'step' => 2,
     ) ) );
-    
+
 // ---------------------------------------------
 // Sidebars Section
 // ---------------------------------------------
@@ -172,7 +173,7 @@ $wp_customize->add_section('relia_sidebars_section', array(
     'panel' => 'relia_appearance_panel',
 ));
 
-    // Single Posts Sidebar 
+    // Single Posts Sidebar
     $wp_customize->add_setting('relia_sidebar_option_post', array(
         'default'               => 'right',
         'transport'             => 'refresh',
@@ -190,8 +191,8 @@ $wp_customize->add_section('relia_sidebars_section', array(
             'both'              => 'Left & Right',
             'none'              => 'No Sidebar',
     ) ) );
-    
-    // Blog & Archive Sidebar 
+
+    // Blog & Archive Sidebar
     $wp_customize->add_setting('relia_sidebar_option_blog', array(
         'default'               => 'right',
         'transport'             => 'refresh',
