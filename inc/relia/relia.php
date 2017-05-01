@@ -38,7 +38,7 @@ function relia_scripts() {
     endif;
 
     // Enqueue scripts
-    wp_enqueue_script('slicknav', get_template_directory_uri() . '/inc/js/jquery.slicknav.min.js', array('jquery'), RELIA_VERSION, true);
+    wp_enqueue_script('slicknav', get_template_directory_uri() . '/inc/js/jquery.slicknav.js', array('jquery'), RELIA_VERSION, true);
     wp_enqueue_script('wow', get_template_directory_uri() . '/inc/js/wow.min.js', array('jquery'), RELIA_VERSION, true);
 
     wp_enqueue_script('stellar', get_template_directory_uri() . '/inc/js/stellar.min.js', array('jquery'), RELIA_VERSION, true);
