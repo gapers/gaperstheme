@@ -20,15 +20,22 @@ endif;
 
         <div class="blog-post-image" style="background-image: url(<?php echo has_post_thumbnail(get_the_ID()) ? $image[0] : $image; ?>);">
 
-        </div>   
+        </div>
 
         <div class="blog-post-overlay">
 
             <h2 class="post-title"><?php the_title(); ?></h2>
             <?php if ( get_theme_mod( 'relia_blog_show_date', 'show' ) == 'show' || get_theme_mod('relia_blog_show_author', 'show') == 'show' ) : ?>
                 <p class="post-meta">
-                    <?php echo get_theme_mod( 'relia_blog_show_date', 'show' ) == 'show' ? relia_posted_on() : ''; ?>
-                    <?php if ( get_theme_mod( 'relia_blog_show_author', 'show' ) == 'show' ) : ?>    
+                    <?php
+                    if (get_post_type() == 'tribe_events') {
+                      echo tribe_get_start_time(get_the_ID(), 'D j/m/Y H:i');
+                      // if ( tribe_get_cost() == 0) { echo "AGGRATISE"; }
+                    } else {
+                      echo get_theme_mod( 'relia_blog_show_date', 'show' ) == 'show' ? relia_posted_on() : '';
+                    }
+                    ?>
+                    <?php if ( get_theme_mod( 'relia_blog_show_author', 'show' ) == 'show' ) : ?>
                         <?php _e( 'by', 'relia'); ?> <span class="post-author"><?php echo the_author_posts_link(); ?></span>
                     <?php endif; ?>
                 </p>
@@ -36,7 +43,8 @@ endif;
 
             <div class="post-content">
                 <?php $content = get_the_content(); ?>
-                <?php echo wp_trim_words( strip_shortcodes( strip_tags( $content ) ), 30); ?>
+                <!-- <?php echo wp_trim_words( strip_shortcodes( strip_tags( $content ) ), 30); ?> -->
+                <?php the_excerpt(); ?>
             </div>
 
             <a class="blog-post-read-more" href="<?php echo esc_url( get_the_permalink( get_the_ID() ) ); ?>"><?php echo esc_html( get_theme_mod( 'relia_blog_read_more', __( 'Read More', 'relia' ) ) ); ?></a>
