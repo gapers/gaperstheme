@@ -42,8 +42,8 @@ endif;
             <?php endif; ?>
 
             <div class="post-content">
-                <?php $content = get_the_content(); ?>
-                <!-- <?php echo wp_trim_words( strip_shortcodes( strip_tags( $content ) ), 30); ?> -->
+                <?php // $content = get_the_content(); ?>
+                <?php // echo wp_trim_words( strip_shortcodes( strip_tags( $content ) ), 30); ?>
                 <?php the_excerpt(); ?>
             </div>
 

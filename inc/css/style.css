@@ -728,9 +728,9 @@ footer.entry-footer span.edit-link a {
     cursor: pointer;
 }
 
-div.post-content {
+/*div.post-content {
     font-size: 12px;
-}
+}*/
 
 div.post-content .wp-post-image{
     float: left;
@@ -1765,7 +1765,7 @@ div#news-posts {
 }
 
 .type-event .post-content .actual-content {
-    font-size: 14px;
+    /*font-size: 14px;*/
     font-weight: 100;
 }
 

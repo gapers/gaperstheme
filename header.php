@@ -27,7 +27,7 @@
 	<header id="masthead" class="site-header" role="banner">
 
             <?php if ( get_theme_mod( 'relia_header_background_type', 'image' ) == 'image' ) : ?>
-                <section class="page-header-block" style="background-image: url('<?php echo esc_url( get_theme_mod( 'relia_header_image', get_template_directory_uri() . '/inc/images/page-header-bg.jpg' ) ); ?>');">
+								<section class="page-header-block" style="background-image: url('<?php echo esc_url( get_theme_mod( 'relia_header_image', get_template_directory_uri() . '/inc/images/page-header-bg.jpg' ) ); ?>');">
             <?php else : ?>
                 <section class="page-header-block">
             <?php endif; ?>

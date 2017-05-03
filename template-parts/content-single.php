@@ -16,17 +16,17 @@ else:
     endif;
 endif;
 
-?>  
+?>
 
 <div class="row">
-    
+
     <?php if ( is_active_sidebar('sidebar-left') ) : ?>
 
         <?php get_sidebar( 'left' ); ?>
 
     <?php endif; ?>
-    
-    <div class="col-sm-<?php echo $width; ?>"> 
+
+    <div class="col-sm-<?php echo $width; ?>">
 
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
@@ -36,7 +36,7 @@ endif;
                 <?php if ( get_theme_mod( 'relia_single_show_date', 'show' ) == 'show' || get_theme_mod( 'relia_single_show_author', 'show' ) == 'show' ) : ?>
                     <p class="post-meta">
                         <?php echo get_theme_mod( 'relia_single_show_date', 'show' ) == 'show' ? relia_posted_on() : ''; ?>
-                        <?php if ( get_theme_mod( 'relia_single_show_author', 'show' ) == 'show' ) : ?>    
+                        <?php if ( get_theme_mod( 'relia_single_show_author', 'show' ) == 'show' ) : ?>
                             by <span class="post-author"><?php echo the_author_posts_link(); ?></span>
                         <?php endif; ?>
                     </p>
@@ -46,7 +46,8 @@ endif;
 
             <div class="post-content">
 
-                <?php the_post_thumbnail(); the_content(); ?>
+                <?php // the_post_thumbnail(); ?>
+                <?php the_content(); ?>
                 <?php
                     wp_link_pages( array(
                             'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'relia' ),
@@ -63,7 +64,7 @@ endif;
         </article>
 
     </div>
-    
+
     <?php if ( is_active_sidebar('sidebar-right') ) : ?>
 
         <?php get_sidebar( 'right' ); ?>
@@ -71,5 +72,3 @@ endif;
     <?php endif; ?>
 
 </div>
-
-

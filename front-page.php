@@ -35,22 +35,17 @@ get_header();
             );
             $the_query = new WP_Query( $args );
 
-            echo '<div class="relia-blog-content">';
-            // Il Loop
-            while ( $the_query->have_posts() ) :
-              $the_query->the_post();
-              get_template_part('template-parts/content-blog', get_post_format());
-            endwhile;
-            echo '</div>';
-            ?>
-            <div class="col-sm-4">
-              <div>
-                <div class="pagination-links">
-                  <?php echo paginate_links(); ?>
-                </div>
-              </div>
-            </div>
-            <?php
+            if ($the_query->have_posts()) {
+              echo '<div class="relia-blog-content">';
+              // Il Loop
+              while ( $the_query->have_posts() ) :
+                $the_query->the_post();
+                get_template_part('template-parts/content-blog', get_post_format());
+              endwhile;
+              echo '</div>';
+            } else {
+              get_template_part('template-parts/content', 'none');
+            }
             // Ripristina Query & Post Data originali
             wp_reset_query();
             wp_reset_postdata();
@@ -101,7 +96,7 @@ get_header();
 
                   <?php echo $front == 'posts' ? '</div>' : ''; ?>
 
-                  <?php if ($front == 'posts') : ?>
+                  <?php if (false && ($front == 'posts')) : ?>
                     <div class="col-sm-4">
                       <div>
                         <div class="pagination-links">
