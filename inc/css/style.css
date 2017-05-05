@@ -2116,3 +2116,8 @@ ul#relia-testimonials .testimonial-author {
     background-color: #aaa;
     padding: 6px;
 }
+
+/* Hack for pageorigin features widget */
+.features h5 {
+    text-align: center;
+}
