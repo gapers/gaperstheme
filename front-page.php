@@ -31,7 +31,9 @@ get_header();
             <?php
             // La Query
             $args = array(
-              'post_type' => 'tribe_events'
+              'post_type' => 'tribe_events',
+              'post_status' => 'publish',
+              'posts_per_page' => 6
             );
             $the_query = new WP_Query( $args );
 
