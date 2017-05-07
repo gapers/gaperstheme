@@ -2121,3 +2121,13 @@ ul#relia-testimonials .testimonial-author {
 .features h5 {
     text-align: center;
 }
+
+/* Breadcrumb Styling */
+#bc_area {
+  background-color: #1C1C1C;
+}
+
+.breadcrumb {
+  background-color: #aaa;
+  font-size: 80%;
+}

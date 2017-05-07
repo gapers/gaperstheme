@@ -127,4 +127,12 @@
 
 	</header><!-- #masthead -->
 
-	<div id="content" class="site-content">
+<?php if ((!is_home()) && (function_exists("bcn_display")) && (get_post_type() != "tribe_events")) : ?>
+	<div id="bc_area" class="site-content">
+  	<div class="container">
+			<div class="row breadcrumb">
+				<?php bcn_display(); ?>
+			</div>
+		</div>
+	</div>
+<?php endif; ?>
