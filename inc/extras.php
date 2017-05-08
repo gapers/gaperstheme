@@ -22,3 +22,11 @@ function relia_body_classes( $classes ) {
 	return $classes;
 }
 add_filter( 'body_class', 'relia_body_classes' );
+
+/**
+ * Adds manual excerpt to pages as well as to Posts
+ */
+function relia_add_excerpts_to_pages() {
+	add_post_type_support( 'page', 'excerpt' );
+}
+add_action( 'init', 'relia_add_excerpts_to_pages' );
