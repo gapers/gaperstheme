@@ -70,7 +70,7 @@ font-weight : bolder;
                     <td>GMST</td><td><INPUT id="gmst" value="0" size="30" style="font-size : medium;" type="text" DISABLED> Angolo orario <INPUT id="gmstangle" value="0" size="12" style="font-size : medium;" type="text" DISABLED></td>
                   </tr>
                 </table>
-              </CENTER>
+              </FORM>
               <!--END CONTENT SECTION-->
               <script>jQuery(document).ready( function () { loadUserSetting(); });</script>
             </div>
