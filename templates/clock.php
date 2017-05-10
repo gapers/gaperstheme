@@ -55,10 +55,10 @@ font-weight : bolder;
               <FORM name="clock">
                 <TABLE border="0" width="200" height="100" cellspacing="5" style="border-size : 4px;border-color : black;border-style : solid;">
                   <tr>
-                    <td>Giorno giuliano</td><td><INPUT id="jd" value="Requires Internet Explorer" size="30" style="font-size : medium;" type="text" DISABLED></td>
+                    <td>Giorno giuliano</td><td><INPUT id="jd" value="Requires Javascript support" size="30" style="font-size : medium;" type="text" DISABLED></td>
                   </tr>
                   <tr>
-                    <td>Tempo locale</td><td><INPUT id="date" value="Requires Internet Explorer" size="30" style="font-size : medium;" type="text" DISABLED></td>
+                    <td>Tempo locale</td><td><INPUT id="date" value="" size="30" style="font-size : medium;" type="text" DISABLED></td>
                   </tr>
                   <tr>
                     <td>UTC</td><td><INPUT id="utc" value="0" size="30" style="font-size : medium;" type="text" DISABLED></td>
