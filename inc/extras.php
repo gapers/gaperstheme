@@ -30,3 +30,12 @@ function relia_add_excerpts_to_pages() {
 	add_post_type_support( 'page', 'excerpt' );
 }
 add_action( 'init', 'relia_add_excerpts_to_pages' );
+
+/* Tribe, add structured data to list view */
+function tribe_list_view_structured_data ( ) {
+    // bail if not list view
+    if ( !tribe_is_list_view() ) return;
+    global $wp_query;
+    Tribe__Events__JSON_LD__Event::instance()->markup( $wp_query->posts );
+}
+add_action( 'wp_head', 'tribe_list_view_structured_data');
