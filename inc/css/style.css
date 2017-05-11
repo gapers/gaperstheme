@@ -2112,9 +2112,15 @@ ul#relia-testimonials .testimonial-author {
     margin-right: 10px;
 }
 
+/* Events styling */
 .tribe-events-list .type-tribe_events {
     background-color: #aaa;
     padding: 6px;
+}
+
+.tribe-events-loop .tribe-events-event-meta {
+    background: inherit;
+    border: inherit;
 }
 
 /* Hack for pageorigin features widget */
