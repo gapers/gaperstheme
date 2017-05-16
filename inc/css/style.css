@@ -732,6 +732,10 @@ footer.entry-footer span.edit-link a {
     font-size: 12px;
 }*/
 
+.post-content {
+  text-align: justify;
+}
+
 div.post-content .wp-post-image{
     float: left;
     padding: 0 15px 15px 0;
