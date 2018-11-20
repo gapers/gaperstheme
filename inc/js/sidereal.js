@@ -30,7 +30,7 @@ UpdateClock();  // Have longitude so bail and start clock update routine
 
 function UpdateClock()  //loop to keep time displays current
 {
-var long = 44.635909;
+var long = 11.182725;
 
 var now = new Date(); // get current date & time from computer clock
 var jd = Math.floor((now.valueOf()/86400000)+2440587.5);
